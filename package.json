@@ -1,0 +1,22 @@
+{
+  "name": "eth-pressure-test",
+  "version": "1.0.0",
+  "description": "ethereum compatible chain pressure test util",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Salpadding/eth-pressure-test.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Salpadding/eth-pressure-test/issues"
+  },
+  "homepage": "https://github.com/Salpadding/eth-pressure-test#readme",
+  "dependencies": {
+    "ethers": "^5.5.1"
+  }
+}
