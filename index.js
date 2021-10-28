@@ -51,6 +51,7 @@ async function main() {
         let resp  = await w
         await resp.wait() 
     }
+    now = new Date()
     console.log(`after confirmed ${count} transactions now = ${now.valueOf() / 1000}`)
 }
 
