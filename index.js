@@ -34,6 +34,8 @@ async function main() {
     const n = await signer.getTransactionCount()
     console.log(`nonce of ${signer.address} = ${n}`) 
     const waits = [] 
+    let now = new Date()
+    console.log(`before sending ${count} transactions now = ${now.valueOf() / 1000}`)
     for(let i = 0; i < count; i++) {
         const w = signer.sendTransaction({
             to: hexify(to),
@@ -49,6 +51,7 @@ async function main() {
         let resp  = await w
         await resp.wait() 
     }
+    console.log(`after confirmed ${count} transactions now = ${now.valueOf() / 1000}`)
 }
 
 
