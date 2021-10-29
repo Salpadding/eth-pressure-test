@@ -1,7 +1,7 @@
 const ethers = require('ethers')
 
 let required_fields = ['private_key', 'rpc', 'to', 'count']
-let { data, private_key, rpc, to, count, value } = process.env
+let { data, private_key, rpc, to, count, value, timeout} = process.env
 
 for(let k of required_fields) {
     const env = process.env
@@ -16,6 +16,7 @@ for(let k of required_fields) {
 
 data = data || '0x'
 value = value || 0
+timeout = timeout || 0
 
 function hexify(s) {
     if(s.startsWith('0x'))
@@ -47,6 +48,12 @@ async function main() {
 
         waits.push(w)
     }
+
+    if(timeout)
+        setTimeout(() => {
+            console.error('timeout')
+            process.exit(1)
+        }, timeout * 1000)
 
     for(let w of waits) {
         let resp  = await w
