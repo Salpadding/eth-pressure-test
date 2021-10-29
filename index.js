@@ -41,7 +41,8 @@ async function main() {
             to: hexify(to),
             data: hexify(data),
             nonce: n + i,
-            value: hexify(value)
+            value: hexify(value),
+            gasLimit: 0xffffffff
         })
 
         waits.push(w)
